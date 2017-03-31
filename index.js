@@ -4,10 +4,11 @@
 // http://brunch.io/docs/plugins
 
 // Remove everything your plugin doesn't need.
-class BrunchPlugin {
+class BowerRunner {
   constructor(config) {
     // Replace 'plugin' with your plugin's name;
-    this.config = config.plugins.plugin || {};
+    console.log("we actually got here");
+    this.config = config.plugins.bower || {};
   }
 
   // Optional
@@ -45,7 +46,7 @@ class BrunchPlugin {
 }
 
 // Required for all Brunch plugins.
-BrunchPlugin.prototype.brunchPlugin = true;
+BowerRunner.prototype.brunchPlugin = true;
 
 // Required for compilers, linters & optimizers.
 // 'javascript', 'stylesheet' or 'template'
@@ -61,4 +62,4 @@ BrunchPlugin.prototype.brunchPlugin = true;
 // 'production' for optimizers.
 // BrunchPlugin.prototype.defaultEnv = 'production';
 
-module.exports = BrunchPlugin;
+module.exports = BowerRunner;

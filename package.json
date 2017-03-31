@@ -1,13 +1,13 @@
 {
-  "name": "name-brunch",
+  "name": "bower-brunch",
   "version": "1.0.0",
-  "description": "Adds {{DESCRIPTION}} support to brunch.",
-  "author": "Paul Miller (http://paulmillr.com/)",
-  "homepage": "https://github.com/brunch/{{NAME}}-brunch",
+  "description": "Adds bower support to brunch.",
+  "author": "Nathan Canning",
+  "homepage": "https://github.com/ncanning/bower-brunch",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:brunch/{{NAME}}-brunch.git"
+    "url": "git@github.com:ncanning/bower-brunch.git"
   },
   "scripts": {
     "test": "eslint index.js && mocha"
