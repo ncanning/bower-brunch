@@ -8,10 +8,6 @@ const exec = require('child_process').exec;
 class BowerRunner {
   constructor(config) {
     // Replace 'plugin' with your plugin's name;
-    console.log("we actually got here");
-    exec('pushd priv/static/components && bower install && popd', (error, stdout, stderr) => {
-        console.log("stdout: " + stdout);
-    });
     this.config = config.plugins.bower || {};
   }
 
@@ -42,7 +38,17 @@ class BowerRunner {
   // files: [File] => null
   // Executed when each compilation is finished.
   // Examples: Hot-reload (send a websocket push).
-  // onCompile(files) {}
+  onCompile(files) {
+      console.log("running bower...");
+      let bowerCommand = 'pushd priv/static/components && bower install && popd';
+      exec(bowerCommand, (error, stdout, stderr) => {
+          if (error) {
+              console.log(error);
+          } else {
+              console.log("bower install complete!");
+          }
+      });
+  }
 
   // Allows to stop web-servers & other long-running entities.
   // Executed before Brunch process is closed.
