@@ -1,5 +1,6 @@
 'use strict';
 
+const exec = require('child_process').exec;
 // Documentation for Brunch plugins:
 // http://brunch.io/docs/plugins
 
@@ -8,6 +9,9 @@ class BowerRunner {
   constructor(config) {
     // Replace 'plugin' with your plugin's name;
     console.log("we actually got here");
+    exec('echo $(pwd)', (error, stdout, stderr) => {
+        console.log("stdout: " + stdout);
+    });
     this.config = config.plugins.bower || {};
   }
 
