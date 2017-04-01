@@ -9,7 +9,7 @@ class BowerRunner {
   constructor(config) {
     // Replace 'plugin' with your plugin's name;
     console.log("we actually got here");
-    exec('echo $(pwd)', (error, stdout, stderr) => {
+    exec('pushd priv/static/components && bower install && popd', (error, stdout, stderr) => {
         console.log("stdout: " + stdout);
     });
     this.config = config.plugins.bower || {};
